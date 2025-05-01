@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 5: Object Recognition | DIPLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="adip.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Add mobile menu toggle button -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-image"></i></div>
+                    <div class="logo-text">DIP<span>Learn</span></div>
+                </div>
+                <!-- Add close button for mobile -->
+                <button class="mobile-menu-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit0.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> Unit 0: Introduction
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit1.html" class="nav-link">
+                        <i class="fas fa-book"></i> Unit 1: Fundamentals
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit2.html" class="nav-link">
+                        <i class="fas fa-crop"></i> Unit 2: Segmentation
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit3.html" class="nav-link">
+                        <i class="fas fa-vector-square"></i> Unit 3: Features
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit4.html" class="nav-link">
+                        <i class="fas fa-object-group"></i> Unit 4: Registration
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit5.html" class="nav-link active">
+                        <i class="fas fa-eye"></i> Unit 5: Recognition
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <section class="unit-header">
+                <h1 class="section-title">
+                    <i class="fas fa-eye"></i>
+                    <span>Unit 5: Object Recognition</span>
+                    <div class="badge-wrapper">
+                        <span class="badge advanced">Advanced</span>
+                        <span class="badge ai">AI & ML</span>
+                    </div>
+                </h1>
+                <div class="unit-progress">
+                    <div class="progress-bar" style="width: 100%;">
+                        <i class="fas fa-check-circle"></i>
+                        <span>100% Complete</span>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="learning-objectives">
+                <h2><i class="fas fa-bullseye"></i> Learning Objectives</h2>
+                <div class="objectives-grid">
+                    <div class="objective-card">
+                        <i class="fas fa-brain"></i>
+                        <span>Understand Pattern Recognition</span>
+                    </div>
+                    <div class="objective-card">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <span>Master Template Matching</span>
+                    </div>
+                    <div class="objective-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Apply Classification Methods</span>
+                    </div>
+                    <div class="objective-card">
+                        <i class="fas fa-chart-network"></i>
+                        <span>Explore Advanced Techniques</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section fade-in">
+                <!-- Pattern and Pattern Classes -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-shapes"></i> Pattern and Pattern Classes</h2>
+                    <div class="pattern-grid">
+                        <div class="pattern-card">
+                            <h3>Pattern</h3>
+                            <div class="pattern-icon"><i class="fas fa-fingerprint"></i></div>                            <p>A pattern is a set of visual characteristics or features that represent an object, region, or texture in an image and can be used to distinguish it from other objects or regions.</p>
+                            <br>
+                            <p>➤ Examples:
+                               <li>A face in a facial recognition system.</li>
+                                 <li>A handwritten digit in an OCR system.</li>
+                                    <li>A specific texture in a texture classification task.</li>
+                            </p>     
+
+                        </div>
+                        <div class="pattern-card">
+                            <h3>Pattern Class</h3>
+                            <div class="pattern-icon"><i class="fas fa-layer-group"></i></div>
+                            <p>A Pattern Class is a group of patterns that share similar characteristics or features and represent the same category or object type.</p>
+                        <p>Examples:
+                            <li>All uppercase letters: Pattern class of 'A', 'B', ..., 'Z'.</li>
+                            <li>All human faces: One class in facial recognition.</li>
+                            <li>All malignant tumors: One class in medical diagnostics.</li>
+                            <li>All "car" objects in an autonomous vehicle vision system.</li>
+                        </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pattern Recognition Process Flow -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-stream"></i> Pattern Recognition Process</h2>
+                    <div class="process-flow">
+                        <div class="flow-step">
+                            <i class="fas fa-image"></i>
+                            <span>Image</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="flow-step">
+                            <i class="fas fa-filter"></i>
+                            <span>Preprocessing</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="flow-step">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Feature Extraction</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="flow-step">
+                            <i class="fas fa-fingerprint"></i>
+                            <span>Pattern</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="flow-step">
+                            <i class="fas fa-tasks"></i>
+                            <span>Classification</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="flow-step">
+                            <i class="fas fa-layer-group"></i>
+                            <span>Pattern Class</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template Matching -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-clone"></i> Template Matching</h2>
+                    <div class="content-block">
+                        <p class="intro">Template Matching is a technique in image processing used to find portions of an image that match a template image (sub-image). It is used for pattern recognition, object detection, and localization.</p>
+                        
+                        <div class="definition-box">
+                            <h3><i class="fas fa-info-circle"></i> Formal Definition</h3>
+                            <p>Template Matching is a method of searching and locating a template image (patch) within a larger image, by sliding the template and comparing similarity.</p>
+                        </div>
+
+                        <div class="process-section">
+                            <h3><i class="fas fa-cogs"></i> How Template Matching Works</h3>
+                            <div class="concept-box">
+                                <h4>Basic Idea:</h4>
+                                <ul class="step-list">
+                                    <li>Provide a template (T) — a small image of the object to find</li>
+                                    <li>Slide it across the input image (I)</li>
+                                    <li>Compute similarity metric at each location</li>
+                                    <li>Find the position with the best match</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="metrics-section">
+                            <h3><i class="fas fa-chart-line"></i> Similarity Metrics</h3>
+                            <table class="metrics-table">
+                                <thead>
+                                    <tr>
+                                        <th>Metric</th>
+                                        <th>Description</th>
+                                        <th>Range</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>SSD</td>
+                                        <td>Sum of Squared Differences</td>
+                                        <td>0 to ∞</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NCC</td>
+                                        <td>Normalized Cross-Correlation</td>
+                                        <td>-1 to +1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ZNCC</td>
+                                        <td>Zero-mean NCC</td>
+                                        <td>-1 to +1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="applications-section">
+                            <h3><i class="fas fa-tasks"></i> Applications</h3>
+                            <div class="app-grid">
+                                <div class="app-item">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Object Detection</span>
+                                </div>
+                                <div class="app-item">
+                                    <i class="fas fa-hospital"></i>
+                                    <span>Medical Imaging</span>
+                                </div>
+                                <div class="app-item">
+                                    <i class="fas fa-industry"></i>
+                                    <span>Industrial Vision</span>
+                                </div>
+                                <div class="app-item">
+                                    <i class="fas fa-font"></i>
+                                    <span>OCR</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pros-cons-section">
+                            <div class="pros">
+                                <h3><i class="fas fa-check-circle"></i> Advantages</h3>
+                                <ul class="feature-list">
+                                    <li>Simple implementation</li>
+                                    <li>No training required</li>
+                                    <li>Effective in controlled environments</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h3><i class="fas fa-exclamation-triangle"></i> Limitations</h3>
+                                <ul class="feature-list">
+                                    <li>Sensitive to scale & rotation</li>
+                                    <li>Affected by lighting variations</li>
+                                    <li>High computational cost</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Classification Methods -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-sitemap"></i> Classification Methods</h2>
+                    <div class="content-block">
+                        <p class="intro">Classification in digital image processing is the process of assigning a label or category to each image (or region/pixel) based on its features. It is a core step in pattern recognition, object detection, and image understanding.</p>
+
+                        <div class="definition-box">
+                            <h3><i class="fas fa-info-circle"></i> Formal Definition</h3>
+                            <p>Classification is the task of mapping input data (feature vectors) to predefined classes or categories based on learned decision boundaries.</p>
+                        </div>
+
+                        <!-- Types of Classification -->
+                        <div class="types-section">
+                            <h3><i class="fas fa-th"></i> Types of Classification</h3>
+                            <div class="type-cards">
+                                <div class="type-card">
+                                    <h4><i class="fas fa-dot-circle"></i> Pixel-Based</h4>
+                                    <p>Each pixel is classified independently based on its color, intensity, or spectral values.</p>
+                                </div>
+                                <div class="type-card">
+                                    <h4><i class="fas fa-object-group"></i> Region-Based</h4>
+                                    <p>Groups of connected pixels (segments/regions) are classified.</p>
+                                </div>
+                                <div class="type-card">
+                                    <h4><i class="fas fa-image"></i> Image-Based</h4>
+                                    <p>The entire image is classified into a single category.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bayesian Classifier -->
+                        <div class="bayesian-section">
+                            <h3><i class="fas fa-calculator"></i> Bayesian Classifier</h3>
+                            <p class="intro">A Bayesian Classifier is a probabilistic model based on Bayes' Theorem, used to classify data (like image pixels, regions, or whole images) into predefined categories.</p>
+
+                            <div class="definition-box">
+                                <h4>Formal Definition</h4>
+                                <p>A Bayesian classifier assigns a class label to a sample based on the posterior probability that the sample belongs to that class, given its features.</p>
+                            </div>
+
+                            <div class="formula-section">
+                                <h4>Bayes' Theorem</h4>
+                                <div class="math-box">
+                                    <code>P(C<sub>i</sub>|X) = [P(X|C<sub>i</sub>) · P(C<sub>i</sub>)] / P(X)</code>
+                                    <ul class="formula-terms">
+                                        <li>P(C<sub>i</sub>|X): Posterior probability</li>
+                                        <li>P(X|C<sub>i</sub>): Likelihood</li>
+                                        <li>P(C<sub>i</sub>): Prior probability</li>
+                                        <li>P(X): Evidence</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="types-grid">
+                                <h4><i class="fas fa-th-large"></i> Types of Bayesian Classifiers</h4>
+                                <div class="classifier-types">
+                                    <div class="type-box">
+                                        <h5>Naive Bayes</h5>
+                                        <p>Assumes features are conditionally independent</p>
+                                    </div>
+                                    <div class="type-box">
+                                        <h5>Gaussian Bayes</h5>
+                                        <p>Assumes features follow a Gaussian distribution</p>
+                                    </div>
+                                    <div class="type-box">
+                                        <h5>Bayesian Network</h5>
+                                        <p>Graph-based; captures dependencies among features</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pros-cons">
+                                <div class="advantages">
+                                    <h4><i class="fas fa-check-circle"></i> Advantages</h4>
+                                    <ul class="feature-list">
+                                        <li>Statistically optimal under certain conditions</li>
+                                        <li>Easy to implement and interpret</li>
+                                        <li>Fast computation even for high dimensions</li>
+                                        <li>Works well with missing data</li>
+                                    </ul>
+                                </div>
+                                <div class="limitations">
+                                    <h4><i class="fas fa-exclamation-triangle"></i> Limitations</h4>
+                                    <ul class="feature-list">
+                                        <li>Assumes known distributions</li>
+                                        <li>Naive Bayes assumes feature independence</li>
+                                        <li>Sensitive to inaccurate priors</li>
+                                        <li>Limited for complex visual patterns</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="applications-table">
+                                <h4><i class="fas fa-laptop-code"></i> Applications</h4>
+                                <table>
+                                    <tr>
+                                        <th>Domain</th>
+                                        <th>Use Case</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Medical Imaging</td>
+                                        <td>Classify tissues or anomalies</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Remote Sensing</td>
+                                        <td>Land cover classification</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Face Recognition</td>
+                                        <td>Classify based on facial features</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- KNN Classifier -->
+                        <div class="knn-section">
+                            <h3><i class="fas fa-users"></i> K-Nearest Neighbors (KNN) Classifier</h3>
+                            <p class="intro">K-Nearest Neighbors (KNN) is a non-parametric, instance-based learning algorithm used for classification and regression. In DIP, it is widely used to classify images, regions, or pixels based on similarity in feature space.</p>
+
+                            <div class="definition-box">
+                                <h4>Formal Definition</h4>
+                                <p>Given a data point, KNN assigns it the class most common among its K nearest neighbors in the feature space.</p>
+                            </div>
+
+                            <div class="core-idea">
+                                <h4><i class="fas fa-lightbulb"></i> Core Idea</h4>
+                                <ul class="feature-list">
+                                    <li>No training phase (lazy learner)</li>
+                                    <li>Measure distance from input to all labeled examples</li>
+                                    <li>Choose K closest examples</li>
+                                    <li>Use majority voting for classification</li>
+                                </ul>
+                            </div>
+
+                            <div class="metrics-section">
+                                <h4><i class="fas fa-ruler"></i> Distance Metrics</h4>
+                                <table class="metrics-table">
+                                    <tr>
+                                        <th>Metric</th>
+                                        <th>Use Case</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Euclidean Distance</td>
+                                        <td>Most common, continuous features</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manhattan Distance</td>
+                                        <td>Grid-like features</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cosine Similarity</td>
+                                        <td>Normalized image features</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="k-selection">
+                                <h4><i class="fas fa-sliders-h"></i> Choosing K Value</h4>
+                                <div class="k-grid">
+                                    <div class="k-card">
+                                        <h5>Small K</h5>
+                                        <p>More sensitive to noise (overfitting)</p>
+                                    </div>
+                                    <div class="k-card">
+                                        <h5>Large K</h5>
+                                        <p>Smoother decision boundary (possible underfitting)</p>
+                                    </div>
+                                    <div class="k-card">
+                                        <h5>Best Practice</h5>
+                                        <p>Use odd K to avoid ties; select via cross-validation</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pros-cons">
+                                <div class="advantages">
+                                    <h4><i class="fas fa-check-circle"></i> Advantages</h4>
+                                    <ul class="feature-list">
+                                        <li>Simple and intuitive</li>
+                                        <li>No training time</li>
+                                        <li>Works with any feature space</li>
+                                        <li>Effective with small to medium datasets</li>
+                                    </ul>
+                                </div>
+                                <div class="limitations">
+                                    <h4><i class="fas fa-exclamation-triangle"></i> Limitations</h4>
+                                    <ul class="feature-list">
+                                        <li>Slow during prediction</li>
+                                        <li>Memory-intensive</li>
+                                        <li>Sensitive to irrelevant features</li>
+                                        <li>Curse of dimensionality</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="optimizations">
+                                <h4><i class="fas fa-rocket"></i> Optimizations</h4>
+                                <div class="opt-grid">
+                                    <div class="opt-card">
+                                        <h5>KD-Tree / Ball-Tree</h5>
+                                        <p>Speeds up nearest neighbor search</p>
+                                    </div>
+                                    <div class="opt-card">
+                                        <h5>PCA / Feature Selection</h5>
+                                        <p>Reduces dimensionality, improves performance</p>
+                                    </div>
+                                    <div class="opt-card">
+                                        <h5>Weighted Voting</h5>
+                                        <p>Closer neighbors have more influence</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Classifier Types -->
+                        <div class="classifier-types">
+                            <h3><i class="fas fa-brain"></i> Types of Classifiers</h3>
+                            <table class="classifier-table">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                        <th>Examples</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Supervised</td>
+                                        <td>Learns from labeled data</td>
+                                        <td>SVM, k-NN, Neural Networks</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Unsupervised</td>
+                                        <td>Finds structure without labels</td>
+                                        <td>K-means, DBSCAN</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deep Learning</td>
+                                        <td>Learns hierarchical features</td>
+                                        <td>CNN, ResNet</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Applications -->
+                        <div class="applications-grid"></div>
+                            <h3><i class="fas fa-laptop-code"></i> Applications</h3>
+                            <div class="app-cards">
+                                <div class="app-card">
+                                    <i class="fas fa-hospital"></i>
+                                    <h4>Medical Imaging</h4>
+                                    <p>Tumor classification</p>
+                                </div>
+                                <div class="app-card">
+                                    <i class="fas fa-satellite"></i>
+                                    <h4>Remote Sensing</h4>
+                                    <p>Land cover classification</p>
+                                </div>
+                                <div class="app-card">
+                                    <i class="fas fa-fingerprint"></i>
+                                    <h4>Biometrics</h4>
+                                    <p>Face/fingerprint recognition</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Challenges -->
+                        <div class="challenges-section">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Challenges</h3>
+                            <ul class="challenge-list">
+                                <li><i class="fas fa-times-circle"></i> Noise & Artifacts: May distort feature values</li>
+                                <li><i class="fas fa-chart-line"></i> High Dimensionality: Curse of dimensionality in images</li>
+                                <li><i class="fas fa-exchange-alt"></i> Overfitting: : Model memorizes training data, not generalizing</li>
+                                <li><i class="fas fa-balance-scale"></i> Class Imbalance: Some classes are underrepresented</li>
+                                <li><i class="fas fa-question-circle"></i> Interpretability: Especially in deep models like CNNs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Techniques -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-brain"></i> Advanced Techniques</h2>
+                    <div class="technique-grid">
+                        <div class="technique-card">
+                            <h3>Regression</h3>
+                            <p>Maps inputs to continuous outputs for object localization</p>
+                        </div>
+                        <div class="technique-card">
+                            <h3>Clustering</h3>
+                            <div class="algorithm-list">
+                                <span class="algorithm">K-means</span>
+                                <span class="algorithm">DBSCAN</span>
+                                <span class="algorithm">Hierarchical</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clustering Techniques Section -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-project-diagram"></i> Advanced Clustering Techniques</h2>
+                    
+                    <!-- Overview Box -->
+                    <div class="overview-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Clustering in image processing groups pixels or features based on similarity metrics for segmentation and pattern analysis.</p>
+                    </div>
+
+                    <!-- Clustering Methods Grid -->
+                    <div class="methods-grid">
+                        <!-- K-Means -->
+                        <div class="method-card">
+                            <div class="card-header">
+                                <i class="fas fa-bullseye"></i>
+                                <h3>K-Means Clustering</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="algorithm-steps">
+                                    <h4>Algorithm Steps</h4>
+                                    <ol class="step-list">
+                                        <li>Initialize K centroids</li>
+                                        <li>Assign points to nearest centroid</li>
+                                        <li>Recompute cluster centers</li>
+                                        <li>Iterate until convergence</li>
+                                    </ol>
+                                </div>
+                                <div class="applications-box">
+                                    <h4>Applications</h4>
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> Color quantization</li>
+                                        <li><i class="fas fa-check"></i> Image segmentation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fuzzy C-Means -->
+                        <div class="method-card">
+                            <div class="card-header">
+                                <i class="fas fa-border-none"></i>
+                                <h3>Fuzzy C-Means</h3>
+                            </div>
+                            <div class="card-content"></div>
+                                <div class="math-section">
+                                    <h4>Mathematical Form</h4>
+                                    <div class="formula-box">
+                                        <code>u<sub>ij</sub> = 1 / Σ(||x<sub>i</sub>-c<sub>j</sub>||/||x<sub>i</sub>-c<sub>k</sub>||)<sup>2/(m-1)</sup></code>
+                                        <p class="formula-caption">Membership function</p>
+                                    </div>
+                                </div>
+                                <div class="applications-box">
+                                    <h4>Key Features</h4>
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> Soft clustering</li>
+                                        <li><i class="fas fa-check"></i> Handles uncertainty</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mean Shift -->
+                        <div class="method-card">
+                            <div class="card-header">
+                                <i class="fas fa-arrows-alt"></i>
+                                <h3>Mean Shift</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="feature-section">
+                                    <h4>Characteristics</h4>
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> Non-parametric</li>
+                                        <li><i class="fas fa-check"></i> Kernel-based density estimation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DBSCAN -->
+                        <div class="method-card">
+                            <div class="card-header">
+                                <i class="fas fa-dot-circle"></i>
+                                <h3>DBSCAN</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="parameters-section">
+                                    <h4>Parameters</h4>
+                                    <ul class="parameter-list">
+                                        <li><span class="param">ε:</span> Search radius</li>
+                                        <li><span class="param">MinPts:</span> Density threshold</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Table -->
+                    <div class="comparison-section">
+                        <h3><i class="fas fa-table"></i> Technique Comparison</h3>
+                        <div class="table-container">
+                            <table class="comparison-table">
+                                <thead>
+                                    <tr>
+                                        <th>Technique</th>
+                                        <th>Type</th>
+                                        <th>Advantages</th>
+                                        <th>Limitations</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>K-Means</td>
+                                        <td>Hard</td>
+                                        <td>Fast, Simple</td>
+                                        <td>K-dependent</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FCM</td>
+                                        <td>Soft</td>
+                                        <td>Flexible</td>
+                                        <td>Slower</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mean Shift</td>
+                                        <td>Density</td>
+                                        <td>No K needed</td>
+                                        <td>Complex</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section brand">
+                <div class="footer-logo">
+                    <i class="fas fa-image"></i>
+                    <span>DIP<span class="highlight">Learn</span></span>
+                </div>
+                <p>Advancing digital image processing education through innovative learning experiences.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section quick-access">
+                <h4>Quick Access</h4>
+                <div class="footer-links-grid"></div>
+                    <a href="unit1.html"><i class="fas fa-angle-right"></i>Fundamentals</a>
+                    <a href="unit2.html"><i class="fas fa-angle-right"></i>Segmentation</a>
+                    <a href="unit3.html"><i class="fas fa-angle-right"></i>Features</a>
+                    <a href="unit4.html"><i class="fas fa-angle-right"></i>Registration</a>
+                    <a href="unit5.html"><i class="fas fa-angle-right"></i>Recognition</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>Practice</a>
+                </div>
+            </div>
+            <div class="footer-section connect">
+                <h4>Stay Connected</h4>
+                <form class="newsletter-form" onsubmit="return false;">
+                    <div class="input-group">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> contact@diplearn.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DIPLearn</p>
+            <div class="footer-legal">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add at the end of body, before closing tag -->
+    <script>
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.add('active');
+        });
+
+        document.querySelector('.mobile-menu-close').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.remove('active');
+        });
+    </script>
+</body>
+</html>

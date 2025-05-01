@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive digital image processing education covering fundamentals, transforms, enhancement, segmentation, and recognition.">
+    <meta property="og:title" content="Digital Image Processing">
+    <meta property="og:description" content="Learn digital image processing from fundamentals to advanced concepts.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="adip.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <title>Digital Image Processing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search topics...">
+            <button class="close-search"><i class="fas fa-times"></i></button>
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-image"></i></div>
+                    <div class="logo-text">DIP<span>Learn</span></div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <a href="unit0.html" class="nav-link dropdown-toggle">
+                    <i class="fas fa-info-circle"></i> Unit 0: Introduction to Digital Image Processing
+                    <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                </a>
+                <li class="nav-item">
+                    <a href="unit1.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-book"></i> Unit 1: Digital Image Fundamentals
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit2.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-crop"></i> Unit 2: Segmentation
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit3.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-vector-square"></i> Unit 3: Feature Representation
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit4.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-object-group"></i> Unit 4: Registration and Fusion
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit5.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-eye"></i> Unit 5: Object Recognition
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+            </ul>
+            
+        </aside>
+
+        <main class="main-content">
+            <section id="dip" class="fade-in"></section>
+                <h1 class="section-title">Digital Image Processing</h1>
+                <p>Comprehensive study of image processing fundamentals, segmentation, feature representation, registration, and recognition.</p>
+            </section>
+            <br>
+            <div class="content-section fade-in">
+                <div class="intro-section">
+                    <h2 class="section-heading">📘 Digital Image Processing Course</h2><br>
+                
+                    <div class="law-types">
+                        <div class="law-type-card">
+                            <h3><i class="fas fa-book"></i> Unit 1</h3>
+                            <p>Digital Image Fundamentals</p>
+                        </div>
+                        <div class="law-type-card">
+                            <h3><i class="fas fa-crop"></i> Unit 2</h3>
+                            <p>Image Segmentation</p>
+                        </div>
+                        <div class="law-type-card">
+                            <h3><i class="fas fa-vector-square"></i> Unit 3</h3>
+                            <p>Feature Representation</p>
+                        </div>
+                        <div class="law-type-card">
+                            <h3><i class="fas fa-object-group"></i> Unit 4</h3>
+                            <p>Registration and Fusion</p>
+                        </div>
+                        <div class="law-type-card">
+                            <h3><i class="fas fa-eye"></i> Unit 5</h3>
+                            <p>Object Recognition</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Syllabus Section -->
+                <div class="syllabus-section">
+                    <h2 class="section-heading"><i class="fas fa-list-alt"></i> Course Syllabus</h2>
+                    <div class="syllabus-grid">
+                        <div class="syllabus-card">
+                            <div class="unit-header">
+                                <span class="unit-number">Unit 0</span>
+                                <span class="hours">10 Hours</span>
+                            </div>
+                            <h3>Introduction to Digital Image Processing</h3>
+                            <ul>
+                                <li>Overview of Digital Image Processing</li>
+                                <li>Applications of Digital Image Processing</li>
+                                <li>Basic Concepts in Image Processing</li>
+                                <li>Image Formation and Acquisition</li>
+                                <li>Image Sampling and Quantization</li>
+                            </ul>
+                        </div>  
+                        <div class="syllabus-card">
+                            <div class="unit-header">
+                                <span class="unit-number">Unit 1</span>
+                                <span class="hours">10 Hours</span>
+                            </div>
+                            <h3>Review of Digital Image Fundamentals</h3>
+                            <ul>
+                                <li>Steps in digital image processing</li>
+                                <li>Digital Imaging system</li>
+                                <li>Digital Image Transform – DFT, DCT etc.</li>
+                                <li>Image enhancement in spatial and frequency domain</li>
+                                <li>Histogram equalization</li>
+                            </ul>
+                        </div>
+
+                        <div class="syllabus-card">
+                            <div class="unit-header">
+                                <span class="unit-number">Unit 2</span>
+                                <span class="hours">10 Hours</span>
+                            </div>
+                            <h3>Segmentation</h3>
+                            <ul>
+                                <li>Edge detection</li>
+                                <li>Thresholding - Global and Adaptive</li>
+                                <li>Region growing and Split-merge algorithms</li>
+                                <li>Active contour models</li>
+                                <li>Validation of Segmented Algorithms</li>
+                                <li>Colour Image Segmentation</li>
+                                <li>Fuzzy segmentation</li>
+                            </ul>
+                        </div>
+
+                        <div class="syllabus-card">
+                            <div class="unit-header">
+                                <span class="unit-number">Unit 3</span>
+                                <span class="hours">10 Hours</span>
+                            </div>
+                            <h3>Image Feature Representation</h3>
+                            <ul>
+                                <li>Boundary Representation</li>
+                                <li>Boundary Description (Simple descriptor, Fourier descriptor, Concavity Tree)</li>
+                                <li>Regional Descriptor (Shape, Topological, Texture)</li>
+                                <li>Transform, Syntactic and structural feature</li>
+                                <li>Feature Selection Technique</li>
+                            </ul>
+                        </div>
+
+                        <div class="syllabus-card">
+                            <div class="unit-header">
+                                <span class="unit-number">Unit 4</span>
+                                <span class="hours">10 Hours</span>
+                            </div>
+                            <h3>Image Registration and Fusion</h3>
+                            <ul>
+                                <li>Feature matching</li>
+                                <li>Spatial alignment</li>
+                                <li>Resampling - Nearest Neighbour and Cubic Splines</li>
+                                <li>Pixel level fusion</li>
+                                <li>Feature level fusion operation</li>
+                                <li>Decisive level fusion operators</li>
+                            </ul>
+                        </div>
+
+                        <div class="syllabus-card">
+                            <div class="unit-header">
+                                <span class="unit-number">Unit 5</span>
+                                <span class="hours">10 Hours</span>
+                            </div>
+                            <h3>Object Recognition</h3>
+                            <ul>
+                                <li>Pattern and Pattern Classes</li>
+                                <li>Template Matching</li>
+                                <li>Classification</li>
+                                <li>Bayesian Classifier</li>
+                                <li>K-NN Classifier</li>
+                                <li>Regression Methods</li>
+                                <li>Clustering Techniques</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Interactive Features -->
+            <div class="quick-actions">
+                <button class="fab" id="scrollTop">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+                <div class="fab-actions">
+                    <button class="fab-item" title="Take Notes">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+                    <button class="fab-item" title="Bookmark">
+                        <i class="fas fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section brand">
+                <div class="footer-logo">
+                    <i class="fas fa-image"></i>
+                    <span>DIP<span class="highlight">Learn</span></span>
+                </div>
+                <p>Advancing digital image processing education through innovative learning experiences.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section quick-access">
+                <h4>Quick Access</h4>
+                <div class="footer-links-grid">
+                    <a href="unit1.html"><i class="fas fa-angle-right"></i>Fundamentals</a>
+                    <a href="unit2.html"><i class="fas fa-angle-right"></i>Segmentation</a>
+                    <a href="unit3.html"><i class="fas fa-angle-right"></i>Features</a>
+                    <a href="unit4.html"><i class="fas fa-angle-right"></i>Registration</a>
+                    <a href="unit5.html"><i class="fas fa-angle-right"></i>Recognition</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>Practice</a>
+                </div>
+            </div>
+            <div class="footer-section connect">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form" onsubmit="return false;">
+                    <div class="input-group">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> contact@diplearn.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DIPLearn</p>
+            <div class="footer-legal">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add Scripts -->
+    <script src="theme.js"></script>
+    <script src="search.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: Image Segmentation | DIPLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="adip.css">
+</head>
+<body>
+    
+        <div class="container">
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <div class="logo-icon"><i class="fas fa-image"></i></div>
+                        <div class="logo-text">DIP<span>Learn</span></div>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <a href="unit0.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-info-circle"></i> Unit 0: Introduction to Digital Image Processing
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                    <li class="nav-item">
+                        <a href="unit1.html" class="nav-link dropdown-toggle">
+                            <i class="fas fa-book"></i> Unit 1: Digital Image Fundamentals
+                            <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="unit2.html" class="nav-link dropdown-toggle">
+                            <i class="fas fa-crop"></i> Unit 2: Segmentation
+                            <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="unit3.html" class="nav-link dropdown-toggle">
+                            <i class="fas fa-vector-square"></i> Unit 3: Feature Representation
+                            <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="unit4.html" class="nav-link dropdown-toggle">
+                            <i class="fas fa-object-group"></i> Unit 4: Registration and Fusion
+                            <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="unit5.html" class="nav-link dropdown-toggle">
+                            <i class="fas fa-eye"></i> Unit 5: Object Recognition
+                            <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+        <main class="main-content">
+            <section class="unit-header fade-in">
+                <h1 class="section-title"><i class="fas fa-puzzle-piece"></i> Unit 2: Image Segmentation</h1>
+                <div class="unit-progress">
+                    <div class="progress-bar" style="width: 40%;">40%</div>
+                </div>
+            </section>
+
+            <div class="content-section fade-in">
+                <!-- Edge Detection -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-border-style"></i> Edge Detection</h2>
+                    <div class="operator-grid">
+                        <div class="operator-card">
+                            <h3>Sobel Operator</h3>
+                            <div class="operator-icon"><i class="fas fa-vector-square"></i></div>
+                            <p>Gradient-based edge detection</p>
+                        </div>
+                        <div class="operator-card">
+                            <h3>Canny Edge Detector</h3>
+                            <div class="operator-icon"><i class="fas fa-star"></i></div>
+                            <ul class="feature-list">
+                                <li>Smoothing</li>
+                                <li>Gradient calculation</li>
+                                <li>Non-maximum suppression</li>
+                                <li>Hysteresis thresholding</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thresholding -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-adjust"></i> Thresholding Techniques</h2>
+                    <div class="threshold-tabs">
+                        <div class="tab active" data-tab="global">
+                            <h3>Global Thresholding</h3>
+                            <p>Single threshold value for entire image</p>
+                            <div class="feature-box">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Best for distinct foreground/background</span>
+                            </div>
+                        </div>
+                        <div class="tab" data-tab="adaptive">
+                            <h3>Adaptive Thresholding</h3>
+                            <p>Region-based threshold values</p>
+                            <div class="feature-box">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Handles uneven lighting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Region-Based Segmentation -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-object-group"></i> Region-Based Methods</h2>
+                    <div class="method-grid">
+                        <div class="method-card">
+                            <h3>Region Growing</h3>
+                            <p>Grows regions from seed points</p>
+                        </div>
+                        <div class="method-card">
+                            <h3>Split and Merge</h3>
+                            <p>Hierarchical region segmentation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Techniques -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-code-branch"></i> Advanced Segmentation</h2>
+                    <div class="technique-grid">
+                        <div class="technique-card">
+                            <h3>Active Contours</h3>
+                            <p>Energy-minimizing curves for complex boundaries</p>
+                        </div>
+                        <div class="technique-card">
+                            <h3>Color Segmentation</h3>
+                            <p>RGB, HSV, Lab color space analysis</p>
+                        </div>
+                        <div class="technique-card">
+                            <h3>Fuzzy Segmentation</h3>
+                            <p>Uncertainty-based pixel classification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section brand">
+                <div class="footer-logo">
+                    <i class="fas fa-image"></i>
+                    <span>DIP<span class="highlight">Learn</span></span>
+                </div>
+                <p>Advancing digital image processing education through innovative learning experiences.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section quick-access">
+                <h4>Quick Access</h4>
+                <div class="footer-links-grid">
+                    <a href="unit1.html"><i class="fas fa-angle-right"></i>Fundamentals</a>
+                    <a href="unit2.html"><i class="fas fa-angle-right"></i>Segmentation</a>
+                    <a href="unit3.html"><i class="fas fa-angle-right"></i>Features</a>
+                    <a href="unit4.html"><i class="fas fa-angle-right"></i>Registration</a>
+                    <a href="unit5.html"><i class="fas fa-angle-right"></i>Recognition</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>Practice</a>
+                </div>
+            </div>
+            <div class="footer-section connect">
+                <h4>Stay Connected</h4>
+                <form class="newsletter-form" onsubmit="return false;">
+                    <div class="input-group">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> contact@diplearn.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DIPLearn</p>
+            <div class="footer-legal">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

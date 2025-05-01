@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1: Digital Image Fundamentals | DIPLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="adip.css">
+</head>
+<body>
+   
+        <!-- Sidebar will be the same as main page -->
+        <div class="container">
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <div class="logo-icon"><i class="fas fa-image"></i></div>
+                        <div class="logo-text">DIP<span>Learn</span></div>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <a href="unit0.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-info-circle"></i> Unit 0: Introduction to Digital Image Processing
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                    <li class="nav-item">
+                        <a href="unit1.html" class="nav-link dropdown-toggle">
+                            <i class="fas fa-book"></i> Unit 1: Digital Image Fundamentals
+                            <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="unit2.html" class="nav-link dropdown-toggle">
+                            <i class="fas fa-crop"></i> Unit 2: Segmentation
+                            <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="unit3.html" class="nav-link dropdown-toggle">
+                            <i class="fas fa-vector-square"></i> Unit 3: Feature Representation
+                            <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="unit4.html" class="nav-link dropdown-toggle">
+                            <i class="fas fa-object-group"></i> Unit 4: Registration and Fusion
+                            <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="unit5.html" class="nav-link dropdown-toggle">
+                            <i class="fas fa-eye"></i> Unit 5: Object Recognition
+                            <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+        <main class="main-content">
+            <section class="unit-header">
+                <h1 class="section-title">
+                    <i class="fas fa-book"></i>
+                    Unit 1: Digital Image Fundamentals
+                </h1>
+                <div class="unit-progress">
+                    <div class="progress-bar" style="width: 20%;">20%</div>
+                </div>
+            </section>
+
+            <div class="content-section fade-in">
+                <!-- Steps in Digital Image Processing -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-list-ol"></i> Steps in Digital Image Processing</h2>
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <div class="step-icon"><i class="fas fa-camera"></i></div>
+                            <h3>Image Acquisition</h3>
+                            <p>Capturing images using sensors and converting to digital form</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon"><i class="fas fa-magic"></i></div>
+                            <h3>Preprocessing</h3>
+                            <p>Removing noise and enhancing contrast</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon"><i class="fas fa-puzzle-piece"></i></div>
+                            <h3>Segmentation</h3>
+                            <p>Dividing image into meaningful structures or objects</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon"><i class="fas fa-clipboard-list"></i></div>
+                            <h3>Representation</h3>
+                            <p>Extracting features that describe regions of interest</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon"><i class="fas fa-brain"></i></div>
+                            <h3>Recognition</h3>
+                            <p>Assigning labels and identifying objects</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon"><i class="fas fa-database"></i></div>
+                            <h3>Knowledge Base</h3>
+                            <p>Storing contextual information for processing guidance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Imaging System -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-microchip"></i> Digital Imaging System</h2>
+                    <div class="component-grid">
+                        <div class="component-card">
+                            <i class="fas fa-camera-retro"></i>
+                            <h4>Image Sensors</h4>
+                            <p>CCD, CMOS sensors for image capture</p>
+                        </div>
+                        <div class="component-card">
+                            <i class="fas fa-exchange-alt"></i>
+                            <h4>ADC</h4>
+                            <p>Analog-to-Digital Converters</p>
+                        </div>
+                        <div class="component-card">
+                            <i class="fas fa-hdd"></i>
+                            <h4>Storage</h4>
+                            <p>Storage and Display devices</p>
+                        </div>
+                        <div class="component-card">
+                            <i class="fas fa-microchip"></i>
+                            <h4>Processing</h4>
+                            <p>Hardware/Software processing units</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Image Transforms -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-wave-square"></i> Digital Image Transforms</h2>
+                    <div class="transform-tabs">
+                        <div class="tab active" data-tab="dft">
+                            <h3><i class="fas fa-chart-line"></i> DFT</h3>
+                            <div class="tab-content">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Converts spatial domain to frequency domain</li>
+                                    <li><i class="fas fa-check"></i> Highlights periodic structures</li>
+                                    <li><i class="fas fa-check"></i> Used in filtering and compression</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab" data-tab="dct">
+                            <h3><i class="fas fa-chart-bar"></i> DCT</h3>
+                            <div class="tab-content">
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Uses cosine functions for representation</li>
+                                    <li><i class="fas fa-check"></i> Basis for JPEG compression</li>
+                                    <li><i class="fas fa-check"></i> Energy compaction property</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Enhancement -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-sliders-h"></i> Image Enhancement Techniques</h2>
+                    
+                    <!-- Overview Box -->
+                    <div class="overview-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Enhancement techniques modify digital images to improve visual interpretation or machine analysis.</p>
+                    </div>
+
+                    <div class="component-grid">
+                        <!-- Point Processing -->
+                        <div class="component-card">
+                            <div class="card-header">
+                                <i class="fas fa-adjust"></i>
+                                <h4>Point Processing</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="theory-section">
+                                    <h5>Mathematical Basis</h5>
+                                    <div class="formula-box">
+                                        <p>s = T(r)</p>
+                                        <p class="formula-caption">where s: output pixel, r: input pixel</p>
+                                    </div>
+                                </div>
+                                <div class="techniques-section">
+                                    <h5>Key Operations</h5>
+                                    <ul class="feature-list">
+                                        <li>
+                                            <i class="fas fa-check"></i>
+                                            <span class="technique-name">Contrast Stretching:</span>
+                                            <span class="technique-desc">Linear mapping of intensity levels</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check"></i>
+                                            <span class="technique-name">Histogram Equalization:</span>
+                                            <span class="technique-desc">Probability density function optimization</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Spatial Filtering -->
+                        <div class="component-card">
+                            <div class="card-header">
+                                <i class="fas fa-th"></i>
+                                <h4>Spatial Filtering</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="theory-section">
+                                    <h5>Kernel Operations</h5>
+                                    <div class="matrix-box">
+                                        <div class="matrix">
+                                            <span>1/9</span><span>1/9</span><span>1/9</span>
+                                            <span>1/9</span><span>1/9</span><span>1/9</span>
+                                            <span>1/9</span><span>1/9</span><span>1/9</span>
+                                        </div>
+                                        <p class="matrix-caption">Mean Filter (3×3)</p>
+                                    </div>
+                                </div>
+                                <div class="techniques-section">
+                                    <h5>Common Filters</h5>
+                                    <ul class="feature-list">
+                                        <li>
+                                            <i class="fas fa-check"></i>
+                                            <span class="technique-name">Gaussian Filter:</span>
+                                            <span class="technique-desc">σ-based smoothing</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check"></i>
+                                            <span class="technique-name">Laplacian:</span>
+                                            <span class="technique-desc">∇²f edge detection</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frequency Domain -->
+                        <div class="component-card">
+                            <div class="card-header">
+                                <i class="fas fa-wave-square"></i>
+                                <h4>Frequency Domain</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="theory-section">
+                                    <h5>Fourier Transform</h5>
+                                    <div class="formula-box">
+                                        <p>F(u,v) = ∑∑f(x,y)e<sup>-j2π(ux/M + vy/N)</sup></p>
+                                        <p class="formula-caption">2D DFT</p>
+                                    </div>
+                                </div>
+                                <div class="techniques-section">
+                                    <h5>Filter Types</h5>
+                                    <ul class="feature-list">
+                                        <li>
+                                            <i class="fas fa-check"></i>
+                                            <span class="technique-name">Butterworth Filter:</span>
+                                            <span class="technique-desc">n<sup>th</sup> order frequency response</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check"></i>
+                                            <span class="technique-name">Ideal Filters:</span>
+                                            <span class="technique-desc">Sharp frequency cutoff</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Applications -->
+                        <div class="component-card">
+                            <div class="card-header">
+                                <i class="fas fa-microscope"></i>
+                                <h4>Scientific Applications</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="application-section">
+                                    <h5>Fields of Application</h5>
+                                    <ul class="feature-list">
+                                        <li>
+                                            <i class="fas fa-check"></i>
+                                            <span class="technique-name">Medical Imaging:</span>
+                                            <span class="technique-desc">MRI, CT enhancement</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check"></i>
+                                            <span class="technique-name">Remote Sensing:</span>
+                                            <span class="technique-desc">Satellite image processing</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section brand">
+                <div class="footer-logo">
+                    <i class="fas fa-image"></i>
+                    <span>DIP<span class="highlight">Learn</span></span>
+                </div>
+                <p>Advancing digital image processing education through innovative learning experiences.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section quick-access">
+                <h4>Quick Access</h4>
+                <div class="footer-links-grid">
+                    <a href="unit1.html"><i class="fas fa-angle-right"></i>Fundamentals</a>
+                    <a href="unit2.html"><i class="fas fa-angle-right"></i>Segmentation</a>
+                    <a href="unit3.html"><i class="fas fa-angle-right"></i>Features</a>
+                    <a href="unit4.html"><i class="fas fa-angle-right"></i>Registration</a>
+                    <a href="unit5.html"><i class="fas fa-angle-right"></i>Recognition</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>Practice</a>
+                </div>
+            </div>
+            <div class="footer-section connect">
+                <h4>Stay Connected</h4>
+                <form class="newsletter-form" onsubmit="return false;">
+                    <div class="input-group">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> contact@diplearn.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DIPLearn</p>
+            <div class="footer-legal">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

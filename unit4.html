@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 4: Image Registration and Fusion | DIPLearn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="adip.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-image"></i></div>
+                    <div class="logo-text">DIP<span>Learn</span></div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <a href="unit0.html" class="nav-link dropdown-toggle">
+                    <i class="fas fa-info-circle"></i> Unit 0: Introduction to Digital Image Processing
+                    <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                </a>
+                <li class="nav-item">
+                    <a href="unit1.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-book"></i> Unit 1: Digital Image Fundamentals
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit2.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-crop"></i> Unit 2: Segmentation
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit3.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-vector-square"></i> Unit 3: Feature Representation
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit4.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-object-group"></i> Unit 4: Registration and Fusion
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="unit5.html" class="nav-link dropdown-toggle">
+                        <i class="fas fa-eye"></i> Unit 5: Object Recognition
+                        <i class="fas fa-chevron-down" style="margin-left: auto;"></i>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <section class="unit-header fade-in">
+                <h1 class="section-title"><i class="fas fa-object-ungroup"></i> Unit 4: Image Registration and Fusion</h1>
+                <div class="unit-progress">
+                    <div class="progress-bar" style="width: 80%;">80%</div>
+                </div>
+            </section>
+
+            <div class="content-section fade-in">
+                <!-- Feature Matching -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-project-diagram"></i> Feature Matching</h2>
+                    <div class="technique-grid">
+                        <div class="technique-card">
+                            <h3>SIFT</h3>
+                            <div class="technique-icon"><i class="fas fa-search"></i></div>
+                            <p>Scale Invariant Feature Transform</p>
+                        </div>
+                        <div class="technique-card">
+                            <h3>SURF</h3>
+                            <div class="technique-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <p>Speeded Up Robust Features</p>
+                        </div>
+                        <div class="technique-card">
+                            <h3>ORB</h3>
+                            <div class="technique-icon"><i class="fas fa-dot-circle"></i></div>
+                            <p>Oriented FAST and Rotated BRIEF</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spatial Alignment -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-sync-alt"></i> Spatial Alignment</h2>
+                    <div class="transform-tabs">
+                        <div class="tab active" data-tab="rigid">
+                            <h3>Rigid Registration</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-arrows-alt"></i> Translation</li>
+                                <li><i class="fas fa-redo"></i> Rotation</li>
+                            </ul>
+                        </div>
+                        <div class="tab" data-tab="affine">
+                            <h3>Affine Registration</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-expand-arrows-alt"></i> Scaling</li>
+                                <li><i class="fas fa-compress-arrows-alt"></i> Shearing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resampling -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-th"></i> Resampling Techniques</h2>
+                    <div class="method-grid">
+                        <div class="method-card">
+                            <h3>Nearest Neighbor</h3>
+                            <p>Fast but blocky results</p>
+                            <div class="pros-cons">
+                                <div class="pros"><i class="fas fa-plus-circle"></i> Speed</div>
+                                <div class="cons"><i class="fas fa-minus-circle"></i> Quality</div>
+                            </div>
+                        </div>
+                        <div class="method-card">
+                            <h3>Cubic Spline</h3>
+                            <p>Smooth but computationally intensive</p>
+                            <div class="pros-cons">
+                                <div class="pros"><i class="fas fa-plus-circle"></i> Quality</div>
+                                <div class="cons"><i class="fas fa-minus-circle"></i> Performance</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Fusion -->
+                <div class="topic-card">
+                    <h2><i class="fas fa-layer-group"></i> Image Fusion</h2>
+                    <div class="fusion-levels">
+                        <div class="fusion-card">
+                            <h3>Pixel-Level</h3>
+                            <ul class="feature-list">
+                                <li>Averaging</li>
+                                <li>PCA</li>
+                                <li>Wavelet transform</li>
+                            </ul>
+                        </div>
+                        <div class="fusion-card">
+                            <h3>Feature-Level</h3>
+                            <ul class="feature-list">
+                                <li>Edge combination</li>
+                                <li>Corner detection</li>
+                                <li>Feature enhancement</li>
+                            </ul>
+                        </div>
+                        <div class="fusion-card">
+                            <h3>Decision-Level</h3>
+                            <ul class="feature-list">
+                                <li>Majority voting</li>
+                                <li>Bayesian fusion</li>
+                                <li>Weighted decisions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section brand">
+                <div class="footer-logo">
+                    <i class="fas fa-image"></i>
+                    <span>DIP<span class="highlight">Learn</span></span>
+                </div>
+                <p>Advancing digital image processing education through innovative learning experiences.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section quick-access">
+                <h4>Quick Access</h4>
+                <div class="footer-links-grid">
+                    <a href="unit1.html"><i class="fas fa-angle-right"></i>Fundamentals</a>
+                    <a href="unit2.html"><i class="fas fa-angle-right"></i>Segmentation</a>
+                    <a href="unit3.html"><i class="fas fa-angle-right"></i>Features</a>
+                    <a href="unit4.html"><i class="fas fa-angle-right"></i>Registration</a>
+                    <a href="unit5.html"><i class="fas fa-angle-right"></i>Recognition</a>
+                    <a href="#"><i class="fas fa-angle-right"></i>Practice</a>
+                </div>
+            </div>
+            <div class="footer-section connect">
+                <h4>Stay Connected</h4>
+                <form class="newsletter-form" onsubmit="return false;">
+                    <div class="input-group">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> contact@diplearn.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DIPLearn</p>
+            <div class="footer-legal">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
